@@ -3,7 +3,7 @@ package interview;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Fibonacci {
+public class FibonacciRecursive {
 	public List<Long> calculateFibs(long seed1, long seed2, long length) {
 		List<Long> fibArray = new ArrayList<>();
 		
@@ -21,7 +21,7 @@ public class Fibonacci {
 	}
 	
 	public static void main(String[] args) {
-		Fibonacci fib = new Fibonacci();
+		FibonacciRecursive fib = new FibonacciRecursive();
 		List<Long> fibArray = fib.calculateFibs(0, 1, 10);
 		System.out.println(fibArray.toString());
 	}
