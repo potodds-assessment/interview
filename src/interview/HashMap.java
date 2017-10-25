@@ -1,5 +1,17 @@
 package interview;
 
+/*************************************
+ * @author lap
+ *
+ * Custom implementation of a HashMap
+ * 1. hash hit, then check if value already exists
+ * 2. hash miss, then add value
+ * 3. hash hit, but value doesn't, append to list
+ *
+ * @param <K>
+ * @param <V>
+ */
+
 public class HashMap<K, V> {
 	private static final int SIZE = 16;
 	private Entry<K, V>[] table = new Entry[SIZE];
