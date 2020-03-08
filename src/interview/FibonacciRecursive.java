@@ -2,7 +2,15 @@ package interview;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/****************************
+ * 
+ * Fibonacci calculated recursively.
+ * 
+ * base case and recursive case
+ * 
+ * @author lwlee
+ *
+ */
 public class FibonacciRecursive {
 	public List<Long> calculateFibs(long seed1, long seed2, long length) {
 		List<Long> fibArray = new ArrayList<>();

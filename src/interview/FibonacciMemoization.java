@@ -2,7 +2,15 @@ package interview;
 
 import java.util.Map;
 import java.util.HashMap;
-
+/*************************
+ * 
+ * Recursive solution with memoization to calculating fibonacci
+ * 
+ * memoization means to store data that has already been calculated
+ * 
+ * @author lwlee
+ *
+ */
 public class FibonacciMemoization {
 	public static int fibMemo(int i, Map<Integer, Integer> map) {
 		if (i==0) return 0;

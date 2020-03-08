@@ -17,7 +17,8 @@ public class HashMap<K, V> {
 	private Entry<K, V>[] table = new Entry[SIZE];
 	
 	public void put(K key, V value) {
-		Entry current = table[key.hashCode()];
+		int bucket = getBucket(key.hashCode());
+		Entry current = table[bucket];
 		for(; current != null; current = current.next) {
 			if (current.key.equals(key)) {
 				current.value = value;
@@ -27,17 +28,22 @@ public class HashMap<K, V> {
 			}
 		}
 		Entry<K,V> newEntry = new Entry<>(key, value);
-		newEntry.next = table[key.hashCode()];
-		table[key.hashCode()] = newEntry;
+		newEntry.next = table[bucket];
+		table[bucket] = newEntry;
 	}
 	
 	public V get(K key) {
-		Entry<K, V> current = table[key.hashCode()];
+		int bucket = getBucket(key.hashCode());		
+		Entry<K, V> current = table[bucket];
 		while(current != null) {
 			if (current.key.equals(key)) return current.value;
 			current = current.next;
 		}
 		return null;
+	}
+	
+	private int getBucket(int hashCode) {
+		return hashCode % SIZE;
 	}
 }
 

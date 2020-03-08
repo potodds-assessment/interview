@@ -1,5 +1,12 @@
 package interview;
-
+/***********************
+ * Basic idea of a deadlock. 
+ * 2 threads grab opposing locks.  Neither one can release the lock
+ * that the other is holding 
+ * 
+ * @author lwlee
+ *
+ */
 public class Deadlock {
 	
 	public static void main(String[] args) {
