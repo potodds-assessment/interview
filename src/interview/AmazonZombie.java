@@ -82,7 +82,7 @@ public class AmazonZombie {
 		int[][] clone2Data = Arrays.stream(data).map(el -> el.clone()).toArray($ -> data.clone());
 		
 		do {
-			cloneData = ;
+			cloneData = new int[3][2];
 			printData(data);
 			for(int row = 0; row < rowMax; row++) {
 				for(int column = 0; column < columnMax; column++) {
