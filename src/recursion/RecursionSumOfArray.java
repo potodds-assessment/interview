@@ -1,8 +1,16 @@
-package interview;
+package recursion;
 
 import java.util.Arrays;
 import java.util.List;
 
+/*
+ * recursively sum the array of integers
+ * 
+ * recursion works by reusing same method with n-1 value until the base case is reached, then summing up return values.
+ * 
+ * The base case is one element left.
+ * The summation is last value returned + last value of the array.
+ */
 public class RecursionSumOfArray {
 	public int recurse(List<Integer> ar1) {
 		if (ar1.size() > 1) {

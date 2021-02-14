@@ -1,10 +1,12 @@
-package interview;
+package basic;
 
 import java.util.Map;
 import java.util.HashMap;
 /*************************
  * 
  * Recursive solution with memoization to calculating fibonacci
+ * fibonacci series is 0,1,1,2,3,5,8,13,21,34,55,etc
+ * the next number in sequence is the sum of the prior 2 numbers
  * 
  * memoization means to store data that has already been calculated
  * 
@@ -17,6 +19,7 @@ public class FibonacciMemoization {
 		if (i==1) return 1;
 		
 		if (map.containsKey(i)) {
+			System.out.println(map.get(i));
 			return map.get(i);
 		}
 		
@@ -25,6 +28,6 @@ public class FibonacciMemoization {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(FibonacciMemoization.fibMemo(6, new HashMap<>()));
+		System.out.println(FibonacciMemoization.fibMemo(8, new HashMap<>()));
 	}
 }

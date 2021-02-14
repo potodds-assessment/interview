@@ -1,4 +1,4 @@
-package interview;
+package concurrency;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;

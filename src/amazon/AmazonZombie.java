@@ -1,4 +1,4 @@
-package interview;
+package amazon;
 
 import java.util.ArrayList;
 import java.util.Arrays;

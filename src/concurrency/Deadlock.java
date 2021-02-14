@@ -1,8 +1,9 @@
-package interview;
+package concurrency;
 /***********************
  * Basic idea of a deadlock. 
- * 2 threads grab opposing locks.  Neither one can release the lock
- * that the other is holding 
+ * 2 threads grab a lock on different objects.  They then try to grab a lock on each others object.  Deadlock ensues. 
+ * 
+ * To avoid this, code should be written so that they both try to grab lock on same objects in sequence.
  * 
  * @author lwlee
  *

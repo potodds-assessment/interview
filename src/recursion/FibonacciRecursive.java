@@ -1,4 +1,4 @@
-package interview;
+package recursion;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,9 +28,18 @@ public class FibonacciRecursive {
 		return fibArray;
 	}
 	
+	public int fib(int n) {
+		if ( n <= 1 ) 
+			return n;
+		
+		return fib(n-1) + fib(n-2);
+	}
+	
 	public static void main(String[] args) {
 		FibonacciRecursive fib = new FibonacciRecursive();
 		List<Long> fibArray = fib.calculateFibs(0, 1, 10);
 		System.out.println(fibArray.toString());
+		
+		System.out.println( new FibonacciRecursive().fib(7) );
 	}
 }

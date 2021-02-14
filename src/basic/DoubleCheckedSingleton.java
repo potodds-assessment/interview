@@ -1,4 +1,4 @@
-package interview;
+package basic;
 
 public class DoubleCheckedSingleton {
 	private volatile static DoubleCheckedSingleton _instance;

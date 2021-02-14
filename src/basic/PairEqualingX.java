@@ -1,4 +1,10 @@
-package interview;
+package basic;
+
+/*
+ * Find 2 numbers that will total X.
+ * 
+ * Solution is do a double loop.  Summing each value in first array with each value in second array.
+ */
 
 public class PairEqualingX {
 	private static int[] sortedArray = new int[] {-10, -4, -1, 0, 3, 7, 14, 20};

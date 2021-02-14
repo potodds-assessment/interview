@@ -1,7 +1,25 @@
-package interview;
+package basic;
 
+
+/*
+ * reverse string using array
+ * 1. convert string to array of character
+ * 2. for 0 to midpoint, swap i position with end-i position
+ *  
+ * reverse using stringbuffer
+ * 1. pointer to last character, append last-i character to StringBuffer 
+ * 
+ * reverse recursively
+ * 1. base case when string is only one char
+ * 2. recuse case is to recurse string(1,end) then add result + string(0)
+ */
 public class ReverseString {
 
+	/*
+	 * 1. find midpoint of string
+	 * 2. from 0 position to midpoint position, swap value with corresponding mirror position at end
+	 * 		ie 0 and X, 1 and X-1, 2 and X-2, etc 
+	 */
 	public String reverseUsingArray(String i) {
 		char[] s = i.toCharArray();
 		int strLength = s.length;

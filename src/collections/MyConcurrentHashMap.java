@@ -1,10 +1,14 @@
-package interview;
+package collections;
 
 import java.util.Map;
 import java.util.HashMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+/*
+ * A concurrent hashmap uses read and write locks to protect internal hashmap from being corrupted when there are 2 writers.
+ */
 
 public class MyConcurrentHashMap<K,V> {
 	private Map<K,V> hashMap = new HashMap<>();

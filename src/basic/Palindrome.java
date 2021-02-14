@@ -1,4 +1,12 @@
-package interview;
+package basic;
+
+/*
+ * A palindrome is a string that is the same, spelled backwards as well as forward
+ * ex t1t is a palindrome
+ * ex abccba is a palindrome
+ * ex abcdedcbz is not a palindrome
+ * 
+ */
 
 public class Palindrome {
 
@@ -24,7 +32,7 @@ public class Palindrome {
 		
 		Palindrome listOfPs = new Palindrome();
 		for(String word : listOfPalindromes) {
-			System.out.println(listOfPs.isPalindrome(word));
+			System.out.println(word + ":" + listOfPs.isPalindrome(word));
 		}
 	}	
 }

@@ -1,4 +1,4 @@
-package interview;
+package collections;
 
 /*************************************
  * @author lap
@@ -7,6 +7,11 @@ package interview;
  * 1. hash hit, then check if value already exists
  * 2. hash miss, then add value
  * 3. hash hit, but value doesn't, append to list
+ * 
+ * Design
+ * array of Entry objects.  Entry object contains key, value, pointer to next Entry object.
+ * Each array position holds Entry objects with same hash code mapping.
+ * Need to iterate the linked list of Entry objects to find matching value. 
  *
  * @param <K>
  * @param <V>

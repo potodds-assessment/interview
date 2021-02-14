@@ -1,4 +1,4 @@
-package interview;
+package basic;
 
 public class PrimeNumbers {
 	public static String isPrimeOrNot(int num) {
