@@ -40,6 +40,12 @@ public class ArrayMissingTwoNumbers {
 		int sumMissingNumbers = calculatedTotalNumSum - arrNumsSum;
 		int avgMissingNumbers = ( sumMissingNumbers / 2 ) + 1;
 
+		/*
+		 * for a single missing number, its ( sum of sequence ) - ( sum of values in array )
+		 * for 2 missing number, we get the sum of 2 missing numbers
+		 * then use same algorithm for single missing number by using average of sum of 2 missing numbers
+		 * an average will be middle of the 2 missing numbers
+		 */
 		int calculatedTotalNumSum2 = (( avgMissingNumbers + 1 ) * avgMissingNumbers) / 2;
 		int arrNumsSum2 = 0;
 		for(int i=0; i<avgMissingNumbers-1; i++) {
