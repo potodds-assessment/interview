@@ -4,7 +4,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Problem1 {
@@ -16,7 +19,36 @@ public class Problem1 {
 		}
 		return sum;
 	}
-	
+
+	/*
+	 * minimalHeaviestSetAFaster is optimized by
+	 * 1. create total sum during first iteration
+	 * 2. eliminate additional sort
+	 */
+    public static List<Integer> minimalHeaviestSetAFaster(List<Integer> arr) {
+    	List<Integer> list = new ArrayList<>();
+    
+    	Queue<Integer> que = new PriorityQueue<>( Comparator.reverseOrder() );
+
+    	int totalSum = 0;
+    	for(Integer i : arr) {
+    		que.add(i);
+    		totalSum += i;
+    	}
+    	
+    	int currentSum = 0;
+    	while ( !que.isEmpty() ) {
+    		Integer currentValue = que.poll();
+    		currentSum += currentValue;
+			list.add( currentValue );
+    		if ( currentSum > ( totalSum - currentSum ) )
+    			break;
+    	}
+    	
+    	Collections.reverse(list);
+    	return list;
+    }
+
     public static List<Integer> minimalHeaviestSetA(List<Integer> arr) {
     	List<Integer> list = new ArrayList<>();
 
@@ -108,7 +140,7 @@ public class Problem1 {
 //		System.out.println(minimalHeaviestSetA(getTestCase1()));
 //		System.out.println(minimalHeaviestSetA(getTestCase2()));
 //		System.out.println(minimalHeaviestSetA(getTestCase3()));
-		System.out.println(minimalHeaviestSetA(getTestCase4()));
+		System.out.println(minimalHeaviestSetAFaster(getTestCase2()));
 	}
 	
 	public static void main(String[] args) {
