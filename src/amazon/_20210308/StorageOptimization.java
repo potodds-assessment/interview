@@ -3,7 +3,7 @@ package amazon._20210308;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Problem2 {
+public class StorageOptimization {
 
 	private static long findBiggestGap(List<Integer> list,  int slots) {
 		long biggestGap = 1;
@@ -106,7 +106,7 @@ public class Problem2 {
 	}
 	
 	public static void main(String[] args) {
-		new Problem2().run();
+		new StorageOptimization().run();
 	}
 
 }

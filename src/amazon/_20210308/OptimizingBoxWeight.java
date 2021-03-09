@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Problem1 {
+public class OptimizingBoxWeight {
 
 	private static int sumArray(List<Integer> arr) {
 		int sum = 0;
@@ -121,7 +121,7 @@ public class Problem1 {
     	List<Integer> list = new ArrayList<>();
 
     	try {
-            Scanner myReader = new Scanner(new File("C:/Users/lapwa/Downloads/amazon/input006.txt"));
+            Scanner myReader = new Scanner(new File("C:/Users/lapwa/git/JavaInterview/data/amazon_20210308/input006.txt"));
             int total = 0;
             while (myReader.hasNextLine()) {
             	Integer number = Integer.valueOf(myReader.nextLine());
@@ -140,11 +140,11 @@ public class Problem1 {
 //		System.out.println(minimalHeaviestSetA(getTestCase1()));
 //		System.out.println(minimalHeaviestSetA(getTestCase2()));
 //		System.out.println(minimalHeaviestSetA(getTestCase3()));
-		System.out.println(minimalHeaviestSetAFaster(getTestCase2()));
+		System.out.println(minimalHeaviestSetAFaster(getTestCase4()));
 	}
 	
 	public static void main(String[] args) {
-		new Problem1().run();
+		new OptimizingBoxWeight().run();
 	}
 
 }
