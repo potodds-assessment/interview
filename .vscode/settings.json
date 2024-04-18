@@ -1,0 +1,6 @@
+{
+    "java.codeGeneration.hashCodeEquals.useJava7Objects": true,
+    "java.configuration.runtimes": [
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
+}
