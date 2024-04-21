@@ -2,7 +2,7 @@ package codility;
 
 import java.util.Arrays;
 
-public class Test {
+public class FindMissingInteger {
 
     public int findMissingInteger(int[] A) {
         Arrays.sort(A);
@@ -21,6 +21,6 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Test().findMissingInteger(new int[]{1, 3, 6, 4, 1, 2}));
+        System.out.println(new FindMissingInteger().findMissingInteger(new int[]{1, 3, 6, 4, 1, 2}));
     }
 }

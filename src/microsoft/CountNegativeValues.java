@@ -1,5 +1,15 @@
 package microsoft;
 
+//-4 -3 -3 -2  2  3  4
+//-4 -3 -3  1  2  3  4
+//-4 -3 -2  2  2  3  5
+//-1  0  2  2  3  4  5
+// 0  2  3  .  .  .  .
+// 2  2  3  .  .  .  .
+// 5  6  6  .  .  .  .
+// you can also use imports, for example:
+// import java.util.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
