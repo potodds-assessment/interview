@@ -77,3 +77,11 @@ public class VerifyShortenedString {
 
 // 0 1 2 3
 // i 1 8 n
+
+
+//============================
+/*
+ * The first question that was given:
+ * Given a string with characters and open/close parenthesis, return valid string that has removed invalid parenthesis ie )(.  Valid == (c) or ((c)) or (c(a))
+ * I used a stack to hold all parenthesis indices.  The invalid ones will be left in the stack.  Also used a set to hold invalid opening parenthesis.
+ */
