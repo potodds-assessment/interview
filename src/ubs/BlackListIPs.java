@@ -2,6 +2,10 @@ package ubs;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.Deque;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  there are n blacklisted ip regexes given as an array of strings, it consists of * or '.' 
@@ -15,31 +19,67 @@ import java.util.regex.Pattern;
 
 public class BlackListIPs {
 
-    public void run() {
+    public List<Integer> run(String[] blacklistIPs, String[] IPs) {
 
-        String regex = ".123.*";
-        String good = "12.1.123.45";
-        String bad = "1.2.3.4";
+        List<Integer> result = new ArrayList<>();
+        Deque<String> fiveSecQ = new ArrayDeque<>();
 
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(good);
-        if (matcher.find())
-            System.out.println(good + " worked");
-        else
-            System.out.println(good + " failed");
+        for(String ip : IPs) {
+            boolean found=false;
+            for(String blIP : blacklistIPs) {
+                Pattern pattern = Pattern.compile(blIP);
+                Matcher matcher = pattern.matcher(ip);
+                if (matcher.matches()) {
+                    System.out.println("regex:" + blIP + ",ip:" + ip);
+                    found=true;
+                    break;
+                }
+            }
+            if (found) {
+                result.add(1);
+                if (fiveSecQ.size() >= 5) {
+                    fiveSecQ.removeLast();
+                }
+                fiveSecQ.addFirst(ip);
 
-        matcher = pattern.matcher(bad);
-        if (matcher.find())
-            System.out.println(bad + " worked");
-        else
-            System.out.println(bad + " failed");
+            } else {
+                if (fiveSecQ.size() >= 5) {
+                    if (fiveSecQ.contains(ip)) {
+                        result.add(1);
+                    } else {
+                        result.add(0);
+                    }
 
+                    fiveSecQ.removeLast();
+                    fiveSecQ.addFirst(ip);
+                } else {
+                    fiveSecQ.addFirst(ip);
+                    result.add(0);
+                }
+            }
+
+
+        }
+
+        return result;
     }
 
+    public void test() {
+        String regex = "34.*";
+        String ip = "12.1.23.34";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(ip);
+        if (matcher.matches()) 
+            System.out.println("matches regex=" + regex + ",ip=" + ip);
+        if (matcher.find()) 
+            System.out.println("find regex=" + regex + ",ip=" + ip);
+    }
 
     public static void main(String[] args) {
         BlackListIPs app = new BlackListIPs();
-        app.run();
+        System.out.println(app.run(new String[]{"111.*" , "123.*" , "34.*"}, 
+            new String[]{"123.1.23.34", "121.1.23.34", "34.1.23.34", "12.1.23.34","121.1.23.34","121.1.23.34"}));
+        app.test();
     }
 }
 
