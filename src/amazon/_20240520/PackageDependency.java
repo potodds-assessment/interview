@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Stack;
 
 /*
 {
@@ -21,6 +22,34 @@ import java.util.HashMap;
 
 public class PackageDependency {
     List<String> ans = new ArrayList<>();
+
+/*
+ * Stack doesn't work
+
+    Stack<String> stk = new Stack<>();
+
+    public void addDep(Map<String, List<String>> mapDep, List<String> dep) {
+        if (dep == null || dep.size() == 0)
+            return;
+
+        for(String d : dep) {
+            stk.push(d);
+            addDep(mapDep, mapDep.get(d));
+        }
+    }
+
+    public List<String> findDependencies(Map<String, List<String>> mapDep, String key) {
+
+        stk.push(key);
+        addDep(mapDep, mapDep.get(key));
+
+        while (!stk.isEmpty()) 
+            ans.add(stk.pop());    
+
+        return ans;
+    }
+ */
+
 
     public void findBase(Map<String, List<String>> mainList, List<String> deps, Set<String> visited) 
         throws Exception {
@@ -46,6 +75,7 @@ public class PackageDependency {
             List<String> dep = mapDep.get(key);
             visited.add(key);
             findBase(mapDep, dep, visited);
+            ans.add(key);
         } catch(Exception e)  {
             e.printStackTrace();
         }
